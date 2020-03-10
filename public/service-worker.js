@@ -1,6 +1,7 @@
 const FILES_TO_CACHE = [
     '/',
     '/index.html',
+    '/db.js',
     '/manifest.webmanifest',
     '/assets/css/styles.css',
     '/assets/js/index.js',
@@ -58,7 +59,7 @@ self.addEventListener("fetch", function(evt) {
             // Network request failed, try to get it from the cache.
             return cache.match(evt.request);
           });
-      }).catch(err => console.log(err))
+      }).catch(err => console.log(err)) //call db fetch from indexdb
     );
     return;
   }
